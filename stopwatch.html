@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+ <style>
+     #stopwatch{
+            font-size: 50px;
+            margin: auto;
+            width: 50%;
+            padding: 10px;
+     }
+
+    .container {
+            height: 200px;
+            position: relative;
+                       
+    }
+    .center {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-20%, -50%);
+        transform: translate(-20%, -50%);
+        
+    }
+    #bicheg{
+        font-size: 50px;
+            margin: auto;
+            width: 50%;
+            padding: 10px;
+    }
+    #laps{
+        width: 600px;
+        height: 400px;
+        background-color: aqua;
+        margin : auto;
+        
+    }
+    .lap{
+        background-color: teal;
+        
+    }
+    .lapNumber{
+        background-color: tomato;
+        height: 40px;
+        width: 10%;
+        float: left;
+    }
+    .lapTimer{
+        background-color: yellow;
+        height: 40px;
+        width: 90%;
+        float: left;
+    }
+    #laps{
+        overflow: scroll;
+    }
+    body{
+        background-image: url('background.png');
+    }
+ </style>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="index.html">FirstWeb</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="stopwatch.html">Stopwatch</a></li>
+            <li><a href="Login.html">Login</a></li>
+            <li><a href="javascript18.html">BackgroundChanger</a></li>
+            <li><a href="calculator.html">Calculator</a></li>
+            <li><a href="todo.html">Todo</a></li>
+            <li><a href="timer.html">Timer</a></li>
+            <li><a href="randomSentence.html">randomSentence</a></li>
+            <li><a href="gifSelector.html">GIF</a></li>
+            <li><a href="DivTagalga.html">invisibility</a></li>
+            <li><a href="slideShow.html">SlideShow</a></li>
+          </ul>
+        </div>
+      </nav>
+    <div class = "container">
+        <div id ="bicheg">STOP WATCH</div>
+        <div id="stopwatch">00:00:00</div>
+            <div class= "center">
+            <button onclick="toggleStart()" id = "start"> Start </button>
+            <button onclick="reset()"> Reset </button>
+            <button  class="lapButton" onclick= "lap()"> Lap </button>
+            </div>
+        </div>
+    </div>
+    <div id="laps">  
+    </div>
+    <script>
+        var display = document.getElementById("stopwatch")
+        var min = 0
+        var sec = 0 
+        var doli = 0
+        var displayMin 
+        var displaySec
+        var displayDoli
+        var pause = true 
+        var intervalId
+        var startStopButton = document.getElementById("start")
+        var Laps = document.getElementById("laps")
+        var lapCounter = 1
+        var lapBtn = document.querySelector(".lapButton")
+        function toggleStart(){
+            if(pause){
+                startStopButton.innerHTML = "Stop"
+               intervalId = setInterval(run, 10)
+            }else{
+                startStopButton.innerHTML = "Start"
+                clearInterval(intervalId)
+            }
+            pause = !pause 
+            
+        }
+        function run(){
+            doli++ 
+            if(doli == 100){
+                sec++
+                doli = 0 
+            }
+            if(sec == 60){
+                min++
+                sec = 0
+            }
+            if (sec < 10){
+                displaySec = "0" +sec
+            }else{
+                displaySec = sec
+            }
+            if (min < 10){
+                displayMin = "0" +min
+            } else{
+                displayMin= min
+            }
+            display.innerHTML = displayMin +":"+displaySec+":"+doli
+             
+        }
+        function reset(){
+            display.innerHTML ="00:00:00"
+            doli = 0
+            min = 0
+            sec = 0
+            if(!pause){
+                toggleStart()
+            }
+            laps.innerHTML=""
+            lapCounter = 1            
+
+        }
+        function lap(){
+            var lapNu = document.createElement("div")
+            var lapTime = document.createElement("div")
+            lapNu.innerHTML = lapCounter
+            lapTime.innerHTML = displayMin +":"+displaySec+":"+doli
+            Laps.append(lapNu, lapTime)
+            lapCounter++
+            lapNu.className= "lapNumber"
+            lapTime.className = "lapTimer"
+        }
+    </script>
+</body>
+</html>
