@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+       body{
+         background-image: url('background.png');
+       }        
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="index.html">FirstWeb</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="stopwatch.html">Stopwatch</a></li>
+            <li><a href="Login.html">Login</a></li>
+            <li><a href="javascript18.html">BackgroundChanger</a></li>
+            <li><a href="calculator.html">Calculator</a></li>
+            <li><a href="todo.html">Todo</a></li>
+            <li><a href="timer.html">Timer</a></li>
+            <li><a href="randomSentence.html">randomSentence</a></li>
+            <li><a href="gifSelector.html">GIF</a></li>
+            <li><a href="DivTagalga.html">invisibility</a></li>
+            <li><a href="slideShow.html">SlideShow</a></li>
+          </ul>
+        </div>
+      </nav>
+    <img onclick="pause()" width="500px" height="500px" src="images/violet1.jpg">
+    <script>
+        var images = document.querySelector("img")
+        var myImage = ["images/violet1.jpg","images/violet2.jpg","images/violet3.jpg","images/violet4.jpg"]
+        var i = 0
+        var isPaused = false
+        function pause(){
+            if(!isPaused){
+                clearInterval(intervalId)
+            } else{
+                intervalId =  setInterval(myFunction , 1000)
+            }
+            isPaused = !isPaused
+        }
+        function myFunction(){
+            images.src = myImage[i]
+            i++
+            if(i == myImage.length){
+                i = 0
+            }
+        }
+         var intervalId =  setInterval(myFunction, 500)
+
+    </script>
+</html>
