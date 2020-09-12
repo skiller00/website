@@ -1,0 +1,15 @@
+body{
+    background-color:black;
+    color:white;
+    font-family:verdana;
+    }
+    p {color:green;}
+    p {font-size:30px;}
+    #ez{font-size:20px;}
+    .plan{font-size:40px;}
+    .mom{font-size:10px;}
+    #mom .dad{font-size:20px}
+    #mom .pap{
+    font-size:30px;
+    color:blue;
+    }

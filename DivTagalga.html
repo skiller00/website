@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        body  {
+        background-image: url('background.png');
+            } 
+         #neg{
+          width: 100px;
+          height: 100px;
+          background-color: blue;
+          float: left;
+          margin: 10px;
+         }
+         #hoyr{
+          width: 100px;
+          height: 100px;
+          background-color: blue;
+          float: left;
+          margin: 10px;
+         }
+         #gurav{
+          width: 100px;
+          height: 100px;
+          background-color: blue;
+          float: left;
+          margin: 10px;
+         }                                          
+     </style>
+    </head>
+    <body>
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="index.html">FirstWeb</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="stopwatch.html">Stopwatch</a></li>
+            <li><a href="Login.html">Login</a></li>
+            <li><a href="javascript18.html">BackgroundChanger</a></li>
+            <li><a href="calculator.html">Calculator</a></li>
+            <li><a href="todo.html">Todo</a></li>
+            <li><a href="timer.html">Timer</a></li>
+            <li><a href="randomSentence.html">randomSentence</a></li>
+            <li><a href="gifSelector.html">GIF</a></li>
+            <li><a href="DivTagalga.html">invisibility</a></li>
+            <li><a href="slideShow.html">SlideShow</a></li>
+          </ul>
+        </div>
+      </nav>
+    <button type="button" onclick="myFunction()">click here</button>
+    <div id="neg"></div>
+    <div id="hoyr"></div>
+    <div id="gurav"></div>
+    <script>
+        function myFunction(){
+           var divNeg =  document.getElementById("neg")                    
+           var divHoyr = document.getElementById("hoyr")
+           var divGurav= document.getElementById("gurav")
+            do{
+                tovchluurDrgdsanToo++
+            }while(tovchluurDrgdsanToo>5)
+                                              
+           console.log(tovchluurDrgdsanToo)
+           if(tovchluurDrgdsanToo==1){
+            divNeg.style.visibility="hidden"
+              
+           }           
+           if(tovchluurDrgdsanToo==2){
+               divNeg.style.visibility="visible"
+              divHoyr.style.visibility="hidden"
+           }else if(tovchluurDrgdsanToo==3){            
+            divHoyr.style.visibility="visible"
+            divNeg.style.visibility="visible"
+             divGurav.style.visibility="hidden"            
+           } else if(tovchluurDrgdsanToo==4){
+               divNeg.style.visibility="visible"
+               divHoyr.style.visibility="visible"
+               divGurav.style.visibility="visible"
+               tovchluurDrgdsanToo= 0   
+           }
+         }
+        
+         var tovchluurDrgdsanToo = 0 
+    </script>
+    </body>
+</html>

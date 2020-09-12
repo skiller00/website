@@ -1,0 +1,12 @@
+.a1{
+    background: antiquewhite;
+    border: 1px solid #000;
+    margin-top: 10px;
+    height: 150px;
+}
+.a2{
+    background: aqua;
+    border: 1px solid black;
+    height: 300px;
+    margin-top: 10px;
+}

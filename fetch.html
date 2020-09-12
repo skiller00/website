@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+    <script>
+   const getJSON = async () =>{
+    let response = await fetch('text.txt')
+    let data = await response.text()
+    console.log(data)
+    }
+    getJSON()
+  </script>
+</body>
+</html>

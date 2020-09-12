@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+       body{
+         background-image: url('background.png');
+       }
+     button{
+        width: 50px;
+        height: 50px;
+     }
+     input{
+        width: 205px;
+        height: 50px;
+        
+     }
+     .equal{
+        width: 101px;
+        height: 50px;
+     }
+    </style>
+</head>
+<body>
+   <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">FirstWeb</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="index.html">Home</a></li>
+          <li><a href="stopwatch.html">Stopwatch</a></li>
+          <li><a href="Login.html">Login</a></li>
+          <li><a href="javascript18.html">BackgroundChanger</a></li>
+          <li><a href="calculator.html">Calculator</a></li>
+          <li><a href="todo.html">Todo</a></li>
+          <li><a href="timer.html">Timer</a></li>
+          <li><a href="randomSentence.html">randomSentence</a></li>
+          <li><a href="gifSelector.html">GIF</a></li>
+          <li><a href="DivTagalga.html">invisibility</a></li>
+          <li><a href="slideShow.html">SlideShow</a></li>
+        </ul>
+      </div>
+    </nav>
+   <table>
+      <tr>
+         <td colspan="4">
+          <input id= "myInput" type="text" disabled> 
+         </td>
+      </tr>
+      <tr> 
+         <td><button onclick="input(7)"> 7 </button></td>
+         <td><button onclick="input(8)"> 8 </button></td>
+         <td><button onclick="input(9)"> 9 </button></td>
+         <td><button onclick="input('+')"> + </button></td>
+      </tr>
+      <tr>
+         <td><button onclick="input(4)"> 4 </button></td>
+         <td><button onclick="input(5)"> 5 </button></td>
+         <td><button onclick="input(6)"> 6 </button></td>
+         <td><button onclick="input('-')"> - </button></td>
+      </tr>
+      <tr>
+         <td><button onclick="input(1)"> 1 </button></td>
+         <td><button onclick="input(2)"> 2 </button></td>
+         <td><button onclick="input(3)"> 3 </button></td>
+         <td><button onclick="input('*')"> * </button></td>
+      </tr>
+      <tr> 
+         <td><button onclick="input(0)"> 0 </button></td>
+         <td><button onclick="input('00')"> 00 </button></td>
+         <td><button onclick="input('.')"> . </button></td>    
+         <td><button onclick="input('/')"> / </button></td>
+      </tr>
+      <tr>
+         <td><button onclick ="arilgahAll()"> CE </button></td>
+         <td><button onclick ="arilgah()"> c </button></td>          
+         <td colspan="2"><button class = "equal" onclick="equal()"> = </button></td>
+
+      </tr>        
+   </table>
+   <script>
+    var myInput = document.getElementById("myInput")
+    function input(arg){
+       let arrayOp = ["+","-","*","/"]
+       let validInput = true;
+       if(myInput.value[0]== 0) validInput = false
+       if(!validInput) return
+      myInput.value= myInput.value + arg
+    } 
+    function arilgah(){
+         myInput.value = myInput.value.substring(0,myInput.value.length-1)
+    }
+    function equal(){
+         myInput.value = eval(myInput.value)
+    }
+    function arilgahAll(){
+       myInput.value = ""
+    }
+   </script>
+</body>
+<html>
