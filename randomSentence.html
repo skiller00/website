@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        body{
+            background-image: url('background.png');
+        }
+        #a{
+            font-size: 40px
+            
+        }
+    </style>
+</head>
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="index.html">FirstWeb</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="index.html">Home</a></li>
+        <li><a href="stopwatch.html">Stopwatch</a></li>
+        <li><a href="Login.html">Login</a></li>
+        <li><a href="javascript18.html">BackgroundChanger</a></li>
+        <li><a href="calculator.html">Calculator</a></li>
+        <li><a href="todo.html">Todo</a></li>
+        <li><a href="timer.html">Timer</a></li>
+        <li><a href="randomSentence.html">randomSentence</a></li>
+        <li><a href="gifSelector.html">GIF</a></li>
+        <li><a href="DivTagalga.html">invisibility</a></li>
+        <li><a href="slideShow.html">SlideShow</a></li>
+      </ul>
+    </div>
+  </nav>
+    <button onclick = sentence()>Sanamsargui uguulber</button>
+    <p id = "a" style="color: aqua;"></p>
+    <script>
+        var uguulber= [""]
+        var nouns = ["bird", "clock", "boy", "plastic", "duck", "teacher", "old lady", "professor", "hamster", "dog"];
+        var verbs = ["kicked", "ran", "flew", "dodged", "sliced", "rolled", "died", "breathed", "slept", "killed"];
+        var preposition = ["down", "into", "up", "on", "upon", "below", "above", "through", "across", "towards"];
+        var adjectives = ["lazy","dumb","lovely", "rough","gladly"]
+        var adverbs = ["slowly","elegantly","precisely","quickly","sadly",]
+        function sentence() {
+          var rand1 = Math.floor(Math.random() * 5);
+          var rand2 = Math.floor(Math.random() * 5);
+          var rand3 = Math.floor(Math.random() * 10);
+          var rand4 = Math.floor(Math.random() * 10);
+          var rand5 = Math.floor(Math.random() * 10);
+          var rand6 = Math.floor(Math.random() * 10);
+          var content = "The " + adjectives[rand1] + " " + nouns[rand2] + " " + adverbs[rand2] + " " + verbs[rand4] +
+         " because some " + nouns[rand1] + " " + adverbs[rand2] + " " + verbs[rand1] + " " + preposition[rand1] + " a " + 
+         adjectives[rand2] + " " + nouns[rand5] + " which, became a " + adjectives[rand1] + ", " + adjectives[rand1] + " " + 
+         nouns[rand6] + ".";
+
+            document.getElementById("a").innerHTML  =  "&quot;" + content + "&quot;";
+            }
+    </script>
+</body>
+</html>
