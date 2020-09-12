@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        body{
+            background-image: url('background.png');
+        }
+        .main{
+            width: 40%;
+            height: 385px;
+            background-color: aqua;
+            margin: auto;            
+        }
+        .second{
+            width: 95%;
+            height : 300px;
+            background-color: salmon;
+            margin: 8px;
+            overflow: scroll;
+            
+        }
+        .input{
+            width: 65%;
+            height: 50px;
+            margin :3px;
+            
+        }
+        .btn{
+            width: 29%;
+            height: 55px;
+            margin: 3px;
+            float : right;
+            margin-left: 1px;
+        }
+        .btn1{
+            float: right;
+            margin : 5px;
+            
+        }
+        .third{
+            float: left;
+            margin: 5px;
+            
+        }
+        .close1{
+            width: 410px;
+            height: 30px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="index.html">FirstWeb</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="stopwatch.html">Stopwatch</a></li>
+            <li><a href="Login.html">Login</a></li>
+            <li><a href="javascript18.html">BackgroundChanger</a></li>
+            <li><a href="calculator.html">Calculator</a></li>
+            <li><a href="todo.html">Todo</a></li>
+            <li><a href="timer.html">Timer</a></li>
+            <li><a href="randomSentence.html">randomSentence</a></li>
+            <li><a href="gifSelector.html">GIF</a></li>
+            <li><a href="DivTagalga.html">invisibility</a></li>
+            <li><a href="slideShow.html">SlideShow</a></li>
+          </ul>
+        </div>
+      </nav>
+    <div class="container">
+        <div class= "main">
+            <input class= "input" >
+            <button class="btn" onclick="todo()">+</button>
+            <div class= "second"><div class="close1"></div></div>
+        </div>
+    </div>
+    <script>
+        var input = document.querySelector("input")
+        var second = document.querySelector(".second")
+        var third = document.querySelector(".third")
+        var close1=  document.querySelector(".close1")
+        function todo(){
+            var inputUtga = document.createElement("div")
+            var btnTag = document.createElement("button")
+            btnTag.innerHTML= "-"
+            inputUtga.innerHTML = input.value
+            close1.append(inputUtga , btnTag)
+            inputUtga.className = "third"
+            btnTag.className = "btn1"
+        }
+        
+        function removeFunction(){
+        
+        }
+    </script>
+</body>
+</html>
